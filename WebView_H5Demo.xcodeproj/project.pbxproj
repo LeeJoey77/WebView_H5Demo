@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		84162AE120ABD06900F0CF0B /* WebView.html in Resources */ = {isa = PBXBuildFile; fileRef = 84162AE020ABD06900F0CF0B /* WebView.html */; };
+		84162AE320AC128D00F0CF0B /* JS_NativeCameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84162AE220AC128D00F0CF0B /* JS_NativeCameraViewController.swift */; };
+		84162AE720AC1F7B00F0CF0B /* SaveImage_Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84162AE620AC1F7B00F0CF0B /* SaveImage_Util.swift */; };
+		84162AEB20AC30FF00F0CF0B /* JSNativeCamera.html in Resources */ = {isa = PBXBuildFile; fileRef = 84162AEA20AC30FF00F0CF0B /* JSNativeCamera.html */; };
+		84B0A9C620A5783D0091AF3A /* WebViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B0A9C520A5783D0091AF3A /* WebViewViewController.swift */; };
+		84B0A9C820A5784C0091AF3A /* WKWebViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B0A9C720A5784C0091AF3A /* WKWebViewViewController.swift */; };
+		84B0A9CE20A58B710091AF3A /* WKWebView.html in Resources */ = {isa = PBXBuildFile; fileRef = 84B0A9CD20A58B710091AF3A /* WKWebView.html */; };
+		84B8D14120AD067B0060EED2 /* Banner.png in Resources */ = {isa = PBXBuildFile; fileRef = 84B8D14020AD067B0060EED2 /* Banner.png */; };
 		84C921EA20A2FAA400075D08 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C921E920A2FAA400075D08 /* AppDelegate.swift */; };
 		84C921EC20A2FAA400075D08 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C921EB20A2FAA400075D08 /* ViewController.swift */; };
 		84C921EF20A2FAA400075D08 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84C921ED20A2FAA400075D08 /* Main.storyboard */; };
@@ -34,6 +42,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		84162AE020ABD06900F0CF0B /* WebView.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = WebView.html; sourceTree = "<group>"; };
+		84162AE220AC128D00F0CF0B /* JS_NativeCameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JS_NativeCameraViewController.swift; sourceTree = "<group>"; };
+		84162AE620AC1F7B00F0CF0B /* SaveImage_Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveImage_Util.swift; sourceTree = "<group>"; };
+		84162AEA20AC30FF00F0CF0B /* JSNativeCamera.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = JSNativeCamera.html; sourceTree = "<group>"; };
+		84B0A9C520A5783D0091AF3A /* WebViewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewViewController.swift; sourceTree = "<group>"; };
+		84B0A9C720A5784C0091AF3A /* WKWebViewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WKWebViewViewController.swift; sourceTree = "<group>"; };
+		84B0A9CD20A58B710091AF3A /* WKWebView.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = WKWebView.html; sourceTree = "<group>"; };
+		84B8D14020AD067B0060EED2 /* Banner.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Banner.png; sourceTree = "<group>"; };
 		84C921E620A2FAA400075D08 /* WebView_H5Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WebView_H5Demo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		84C921E920A2FAA400075D08 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		84C921EB20A2FAA400075D08 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -99,6 +115,14 @@
 			children = (
 				84C921E920A2FAA400075D08 /* AppDelegate.swift */,
 				84C921EB20A2FAA400075D08 /* ViewController.swift */,
+				84B0A9C520A5783D0091AF3A /* WebViewViewController.swift */,
+				84B0A9C720A5784C0091AF3A /* WKWebViewViewController.swift */,
+				84162AE220AC128D00F0CF0B /* JS_NativeCameraViewController.swift */,
+				84162AE620AC1F7B00F0CF0B /* SaveImage_Util.swift */,
+				84162AE020ABD06900F0CF0B /* WebView.html */,
+				84B0A9CD20A58B710091AF3A /* WKWebView.html */,
+				84162AEA20AC30FF00F0CF0B /* JSNativeCamera.html */,
+				84B8D14020AD067B0060EED2 /* Banner.png */,
 				84C921ED20A2FAA400075D08 /* Main.storyboard */,
 				84C921F020A2FAA500075D08 /* Assets.xcassets */,
 				84C921F220A2FAA500075D08 /* LaunchScreen.storyboard */,
@@ -193,6 +217,11 @@
 				TargetAttributes = {
 					84C921E520A2FAA400075D08 = {
 						CreatedOnToolsVersion = 9.3;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 0;
+							};
+						};
 					};
 					84C921F920A2FAA500075D08 = {
 						CreatedOnToolsVersion = 9.3;
@@ -230,7 +259,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				84C921F420A2FAA500075D08 /* LaunchScreen.storyboard in Resources */,
+				84B0A9CE20A58B710091AF3A /* WKWebView.html in Resources */,
+				84B8D14120AD067B0060EED2 /* Banner.png in Resources */,
 				84C921F120A2FAA500075D08 /* Assets.xcassets in Resources */,
+				84162AEB20AC30FF00F0CF0B /* JSNativeCamera.html in Resources */,
+				84162AE120ABD06900F0CF0B /* WebView.html in Resources */,
 				84C921EF20A2FAA400075D08 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -256,7 +289,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84B0A9C820A5784C0091AF3A /* WKWebViewViewController.swift in Sources */,
 				84C921EC20A2FAA400075D08 /* ViewController.swift in Sources */,
+				84162AE320AC128D00F0CF0B /* JS_NativeCameraViewController.swift in Sources */,
+				84B0A9C620A5783D0091AF3A /* WebViewViewController.swift in Sources */,
+				84162AE720AC1F7B00F0CF0B /* SaveImage_Util.swift in Sources */,
 				84C921EA20A2FAA400075D08 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
