@@ -1,0 +1,80 @@
+
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <title>首页</title>
+    </head>
+    
+    <script type="text/javascript">
+        function loadURL(url) {
+            var iFrame;
+            iFrame = document.createElement("iframe");
+            iFrame.setAttribute("src", url);
+            iFrame.setAttribute("style", "display:none;");
+            iFrame.setAttribute("height", "0px");
+            iFrame.setAttribute("width", "0px");
+            iFrame.setAttribute("frameborder", "0");
+            document.body.appendChild(iFrame);
+            // 发起请求后这个 iFrame 就没用了，所以把它从 dom 上移除掉
+            iFrame.parentNode.removeChild(iFrame);
+            iFrame = null;
+        }
+    
+        function firstClick() {
+            //要传递参数时, 可以拼接在url上
+            loadURL("Http_request://shareClick?title=测试分享的标题&content=测试分享的内容&url=http://www.baidu.com");
+        }
+    
+        //Swift 调用 JS
+        function Swift_JS1(){
+            alert("Swift调用了无参数的js方法");
+        }
+        function Swift_JS2(name1,name2){
+            alert("Swift调用了有参数的js方法,参数分别为" + name1 + "," + name2);
+        }
+    
+        function JS_Swift1(){
+            test1();
+        }
+        function JS_Swift2(){
+            test2('oc','swift');
+        }
+    
+    </script>
+    
+    <body bgcolor="#dddd">
+        <div style="margin-top: 100px">
+            <h1>JS 调用 Swift</h1>
+            <!--      JS 调用 Native 方式一     -->
+            <button type="button" onclick="firstClick()">Click Me!</button>
+            
+            <!--      JS 调用 Native 方式二     -->
+            <button type="button" onclick="JS_Swift1()">JS调用Swift方法(无参)</button>
+            <button type="button" onclick="JS_Swift2()">JS调用Swift方法(传参)</button>
+            
+            <!--      JS 调用 Native 方式三     -->
+            <input type="button" value="无参函数" onclick="OCModel.callNoParam()">
+            <input type="button" value="JS 调用App的弹出对话框方法showAlertMsg" onclick="OCModel.showAlertMsg('js title', 'js message')">
+        </div>
+        
+        <div>
+            <input type="button" value="Call ObjC func with JSON " onclick="OCModel.callWithDict({'name': 'testname', 'age': 10, 'height': 170})">
+            <input type="button" value="JS 调用App的方法后 App再调用js函数执行回调" onclick="OCModel.callHandler('jsParamFunc')">
+        </div>
+        
+        <div>
+            <span id="jsParamFuncSpan" style="color: red; font-size: 50px;"></span>
+        </div>
+        
+        <script type="text/javascript">
+            function jsFunc() {
+                alert('警告');
+            }
+        
+        var jsParamFunc = function(argument) {
+            document.getElementById('jsParamFuncSpan').innerHTML
+            = argument['name'];
+        }
+        </script>
+    </body>
+</html>

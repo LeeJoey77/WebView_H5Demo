@@ -1,0 +1,112 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset = "utf-8" />
+        <title>iOS and JS</title>
+        <style type = "text/css">
+            * {
+                font-size: 40px;
+            }
+        </style>
+    </head>
+    
+    <body>
+        <div style = "margin-top: 100px">
+            <h1 style = "color: red;">Native, H5 交互</h1><br/>
+        </div><br/>
+        
+        <!--      JS 调用 Native 方式一     -->
+        <div>
+            <button type="button" onclick="firstClick()">Click Me!</button>
+        </div><br/>
+        
+        <!--      JS 调用 Native 方式二     -->
+        <div>
+            <input type = "button" value = "点击触发 JS 方法(callJsAlert)" onclick = "callJsAlert()">
+        </div><br/>
+        
+        <div>
+            <input type = "button" value = "点击触发 JS 方法(callJsConfirm)" onclick = "callJsConfirm()">
+        </div><br/>
+        
+        <div>
+            <input type = "button" value = "点击触发 JS 方法(callJsInput)" onclick = "callJsInput()">
+        </div><br/>
+        <div>Click me here: <a href = "http://www.pottermore.com">Jump to Harry Port</a></div><br/>
+        
+        <div id = "SwiftDiv">
+            <span id = "jsParamFuncSpan" style = "color: red; font-size: 50px;"></span>
+        </div>
+        
+        <!--      JS 调用 Native 方式三     -->
+        <div>
+            <input type = "button" value = "点击触发 JS 方法(messageHandlers)" onclick = "messageHandlers()">
+        </div><br/>
+        
+        <script type = "text/javascript">
+            
+            function loadURL(url) {
+                var iFrame;
+                iFrame = document.createElement("iframe");
+                iFrame.setAttribute("src", url);
+                iFrame.setAttribute("style", "display:none;");
+                iFrame.setAttribute("height", "0px");
+                iFrame.setAttribute("width", "0px");
+                iFrame.setAttribute("frameborder", "0");
+                document.body.appendChild(iFrame);
+                // 发起请求后这个 iFrame 就没用了，所以把它从 dom 上移除掉
+                iFrame.parentNode.removeChild(iFrame);
+                iFrame = null;
+            }
+            
+            function firstClick() {
+                loadURL("Http_request://shareClick?title=测试分享的标题&content=测试分享的内容&url=http://www.baidu.com");
+            }
+        
+            function callJsAlert() {
+                alert('这个是 Swift 调用 JS 的方法, 并且通过 Alert() 显示出来!');
+            }
+        
+            function callJsConfirm() {
+                if (confirm('confirm', 'Objective-C call js to show confirm')) {
+                    document.getElementById('jsParamFuncSpan').innerHTML = 'true';
+                }else {
+                    document.getElementById('jsParamFuncSpan').innerHTML = 'false';
+                }
+            }
+        
+            function callJsInput() {
+                var response = prompt('Hello', '请输入名字:');
+                document.getElementById('jsParamFuncSpan').innerHTML = response;
+            }
+        
+            function messageHandlers() {
+                //APPModel 是我们注入的对象
+                window.webkit.messageHandlers.APPModel.postMessage({body: 'messageHandlers'});
+            }
+        </script>
+    </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
