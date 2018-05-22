@@ -3,8 +3,22 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
         <title>首页</title>
+        <style>
+            .btn-button {
+                display: block;
+                height: 45px;
+                line-height: 45px;
+                margin: 10px auto;
+                color: #fff;
+                background: #8bc53f;
+                border: 1px solid;
+                border-radius: 10px;
+                text-align: center;
+                text-decoration: none;
+                font-size: 14px;
+            }
+        </style>
     </head>
-    
     <script type="text/javascript">
         function loadURL(url) {
             var iFrame;
@@ -43,23 +57,33 @@
     </script>
     
     <body bgcolor="#dddd">
-        <div style="margin-top: 100px">
+        <header>
+            <h1>Native调用JS</h1>
+        </header>
+        <div style="margin-top: 30px">
             <h1>JS 调用 Swift</h1>
             <!--      JS 调用 Native 方式一     -->
-            <button type="button" onclick="firstClick()">Click Me!</button>
-            
+            <div>
+                <p>方式一</p>
+                <div class='btn-button'  onclick="firstClick()">JS调用Native方式一</div>
+            <div>
             <!--      JS 调用 Native 方式二     -->
-            <button type="button" onclick="JS_Swift1()">JS调用Swift方法(无参)</button>
-            <button type="button" onclick="JS_Swift2()">JS调用Swift方法(传参)</button>
-            
+            <div>
+                <p>方式二</p>
+                <div class='btn-button' onclick="JS_Swift1()">JS调用Native方式二(无参)</div>
+                <div class='btn-button' onclick="JS_Swift2()">JS调用Native方式二(传参)</div>
+            </div>
             <!--      JS 调用 Native 方式三     -->
-            <input type="button" value="无参函数" onclick="OCModel.callNoParam()">
-            <input type="button" value="JS 调用App的弹出对话框方法showAlertMsg" onclick="OCModel.showAlertMsg('js title', 'js message')">
+            <div>
+                <p>方式三</p>
+                <div class='btn-button' onclick="OCModel.callNoParam()">JS调用Native方式三</div>
+                <div class='btn-button' onclick="OCModel.showAlertMsg('js title', 'js message')">JS 调用App的弹出对话框方法showAlertMsg</div>
+            </div>
         </div>
         
         <div>
-            <input type="button" value="Call ObjC func with JSON " onclick="OCModel.callWithDict({'name': 'testname', 'age': 10, 'height': 170})">
-            <input type="button" value="JS 调用App的方法后 App再调用js函数执行回调" onclick="OCModel.callHandler('jsParamFunc')">
+            <div class="btn-button" onclick="OCModel.callWithDict({'name': 'testname', 'age': 10, 'height': 170})">Call ObjC func with JSON </div>
+            <div class="btn-button" onclick="OCModel.callHandler('jsParamFunc')">JS 调用App的方法后 App再调用js函数执行回调</div>
         </div>
         
         <div>
